@@ -1,2 +1,2 @@
-# Laborlist-and-Wages
+# Laborlist and Wages
 In This Project We basically created SRS for Laborlist and their wages management system.we also made one database for it.We used DBMS concepts in this projects like E-R Model,Normalization and Relational Model.We created one basic website for this for backend we used Django in which we can insert,Remove or Edit Labor details.laborlist and wages database contains table for labor detail and their work place and wages.
