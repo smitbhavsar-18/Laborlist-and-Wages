@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Review matters!</title>
+	<link rel="stylesheet" type="text/css" href="labor_style.css">
+</head>
+<body>
+	<div class="container" style="background-color:#43cea2;">
+	<form action="" method="get" id="locationform">
+		<h1> Location Add form </h1>
+		<p>Required filds are followed by *</p>
+		<h2>location Info</h2>
+		<p>street_add: *<input type="text" name="street_add" required></p>
+		<p>city: *<input type="text" name="city" required></p>
+		<p>state: *<input type="text" name="state" required></p>
+		<p>Country: *<input type="text" name="country" required></p>
+		<p>location id: *<input type="number" name="location_id" id="location_id" required></p>
+		<center>
+		<button type="submit" form="locationform" value="insert" style="margin: 10px;">Insert</button>
+		<button type="submit" form="locationform" value="delete" style="margin: 10px;"> delete</button>
+	</center>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>Company Database</title>
+</head>
+<body style="background-color:#a34cff;">
+;">
+    <center>
+        <h1>Insert New Company Details</h1>
+        
+    </hr>
+    <form method="POST" action="/Insertcom/">
+        {% csrf_token %}
+    <table border="1">
+      
+        <tr>
+            <td>Company ID :</td>
+            <td><input type="number" placeholder="Enter Company ID" name="company_id"></td>
+        </tr>
+        <tr>
+            <td>Company Type :</td>
+            <td><input type="text" placeholder="Enter Company Type" name="company_type"></td>
+        </tr>
+        <tr>
+            <td>Street Addreess :</td>
+            <td><input type="text" placeholder="Enter Street Address" name="street_add"></td>
+        </tr>
+        <tr>
+            <td>Highest Number of Worker :</td>
+            <td><input type="number" placeholder="Enter Highest No. of Worker" name="highest_no_worker"></td>
+        </tr>
+        <tr>
+            <td>Region ID: </td>
+            <td><input type="number" placeholder="Enter Region ID" name="region_id"></td>
+        </tr>
+        <tr>
+            <td>Company Name : </td>
+            <td><input type="text" placeholder="Enter Company Name" name="company_name"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Insert"/>
+            <td>
+                {% if messages %}
+                {% for mess in messages %}
+                <b style="color: green;">{{mess}}</b>
+                {%  endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+   <button><a href="{% url 'showcom' %}" style="text-decoration: none;">Company database</a></button>
+</form>
+    </center>
+</body>
+
+

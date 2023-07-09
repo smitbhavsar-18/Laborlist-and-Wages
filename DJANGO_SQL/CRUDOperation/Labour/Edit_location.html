@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Location Database</title>
+</head>
+<body style="background-color:#a34cff;">
+    <div class="locat"> 
+    <center>
+        <h1>Edit Labor work location details</h1>
+        
+    </hr>
+    <form method="POST" action="/Update/{{locationModel.location_id}}">
+        {% csrf_token %}
+    <table border="1">
+        <tr>
+            <td>Location ID</td>
+            <td><input type="number" name="location_id" value="{{locationModel.location_id}}"</td>
+        </tr>
+        <tr>
+            <td>street Address</td>
+            <td><input type="text" name="street_add" value="{{locationModel.street_add}}"</td>        </tr>
+        <tr>
+            <td>City</td>
+            <td><input type="text" name="city" value="{{locationModel.city}}"</td>        </tr>
+        <tr>
+            <td>State</td>
+            <td><input type="text" name="state" value="{{locationModel.state}}"</td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><input type="text" name="contry" value="{{locationModel.contry}}"</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Update Location"></td>
+            <td>
+                {% if messages %}
+                {% for mess in messages %}
+                <b style="color: green;">{{mess}}</b>
+                {%  endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <button><a href="{% url 'showlocation' %}" style="text-decoration: none;">Go to Location database</a></button>
+</form>
+    </center>
+    </div>
+</body>

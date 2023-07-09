@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Location Database</title>
+</head>
+<body>
+    <div class="locat" style="background-color:#a34cff;"> 
+    <center>
+        <h1>Labor work location details</h1>
+        
+    </hr>
+    <button><a href="{% url 'Insertloc' %}" style="text-decoration: none;">Add New Location</a></button>
+    <table border="1">
+        <tr>
+            <th>Location ID</th>
+            <th>Street Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+        </tr>
+       {% for result in data%}
+        <tr>
+            <td>{{result.location_id}}</td>
+            <td>{{result.street_add}}</td>
+            <td>{{result.city}}</td>
+            <td>{{result.state}}</td>
+            <td>{{result.contry}}</td>
+            <td><button><a href="Edit/{{result.location_id}}" style="text-decoration: none;"/>Edit</a></td></button>
+            <td><button><a href="Delete/{{result.location_id}}" onclick="return confirm('Are You Sure?')" style="text-decoration: none;">Delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    </center>
+    </div>
+    
+</body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Company Database</title>
+</head>
+<body >
+    <div class="com" style="background-color:#a34cff;"> 
+    <center >
+        <h1>Company details</h1>
+        
+    </hr>
+    <button><a href="{% url 'Insertcom' %}" style="text-decoration: none;">Add New Company</a></button>
+    <table border="1">
+        <tr>
+            <th>Company ID</th>
+            <th>Company Type</th>
+            <th>Street Address</th>
+            <th>Highest No. Worker</th>
+            <th>Region ID</th>
+            <th>Company Name</th>
+        </tr>
+       {% for result in data%}
+        <tr>
+            <td>{{result.company_id}}</td>
+            <td>{{result.company_type}}</td>
+            <td>{{result.street_add}}</td>
+            <td>{{result.highest_no_worker}}</td>
+            <td>{{result.region_id}}</td>
+            <td>{{result.company_name}}</td>
+            <td><button><a href="/Editcom/{{result.company_id}}" style="text-decoration: none;"/>Edit</a></button></td>
+            <td><button><a href="/Deletecom/{{result.company_id}}" onclick="return confirm('Are You Sure?')" style="text-decoration: none;">Delete</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <button><a href="{% url 'runquery' %}" style="text-decoration: none;">Private Company</a></button>
+    <button><a href="{% url 'runquery1' %}" style="text-decoration: none;">Government Company</a></button>
+    <button><a href="{% url 'runquery2' %}" style="text-decoration: none;">More than 400 Worker</a></button>
+    </center>
+    </div>
+</body>

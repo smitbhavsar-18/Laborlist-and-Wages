@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Location Database</title>
+</head>
+<body style="background-color:#a34cff;">
+    <center>
+        <h1>Insert New Work Location</h1>
+        
+    </hr>
+    <form method="POST" action="/Insert">
+        {% csrf_token %}
+    <table border="1">
+      
+        <tr>
+            <td>Location ID :</td>
+            <td><input type="number" placeholder="Enter Location ID" name="location_id"></td>
+        </tr>
+        <tr>
+            <td>Street Addreess :</td>
+            <td><input type="text" placeholder="Enter Street Address" name="street_add"></td>
+        </tr>
+        <tr>
+            <td>City :</td>
+            <td><input type="text" placeholder="Enter City" name="city"></td>
+        </tr>
+        <tr>
+            <td>State: </td>
+            <td><input type="text" placeholder="Enter State" name="state"></td>
+        </tr>
+        <tr>
+            <td>Country: </td>
+            <td><input type="text" placeholder="Enter Country" name="contry"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Insert"/>
+            <td>
+                {% if messages %}
+                {% for mess in messages %}
+                <b style="color: green;">{{mess}}</b>
+                {%  endfor %}
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <button><a href="{% url 'showlocation' %}" style="text-decoration: none;">Location database</a></button>
+</form>
+    </center>
+</body>
